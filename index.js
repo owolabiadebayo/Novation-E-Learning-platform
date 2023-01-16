@@ -1,13 +1,12 @@
 // import { createRequire } from "module"
 // const require = createRequire(import.meta.url);
 // import express from 'express';
-const express = require('express')
-import cors from 'cors';
-import morgan from 'morgan';
-// import {readdirSync} from 'fs';
+const express= require('express');
+const cors= require('cors');
+const morgan = require('morgan');
 const fs= require('fs');
-import cookieParser from 'cookie-parser';
-import csrf from 'csurf';
+const cookieParser= require('cookie-parser');
+const csrf= require('csurf');
 import mongoose from 'mongoose'; // for database 
 import dotenv from 'dotenv';
 dotenv.config();
