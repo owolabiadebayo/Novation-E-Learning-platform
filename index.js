@@ -1,5 +1,5 @@
-// import { createRequire } from "module"
-// const require = createRequire(import.meta.url);
+import { createRequire } from "module"
+const require = createRequire(import.meta.url);
 // import express from 'express';
 const express= require('express');
 const cors= require('cors');

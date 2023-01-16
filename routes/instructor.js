@@ -1,5 +1,5 @@
-// import { createRequire } from 'node:module'
-// const require = createRequire(import.meta.url);
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url);
 
 // all instructor related routes
 import { jwtSigned } from '../middlewares/index'
