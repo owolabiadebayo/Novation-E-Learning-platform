@@ -1,6 +1,6 @@
 // import { createRequire } from 'node:module'
 // const require = createRequire(import.meta.url);
-import express from 'express';
+const express= require('express');
 const router = express.Router();
 import {register, login, logout ,currentUser, sendTestEmail, generateOtp, verifyOtp, changePassword, getUser, updateUser} from '../controller/auth'
 import {jwtSigned} from '../middlewares/index'
