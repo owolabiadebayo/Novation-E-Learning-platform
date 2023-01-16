@@ -1,15 +1,14 @@
-import { createRequire } from "module"
-const require = createRequire(import.meta.url);
-// import express from 'express';
-const express= require('express');
-const cors= require('cors');
-const morgan = require('morgan');
-const fs= require('fs');
-const cookieParser= require('cookie-parser');
-const csrf= require('csurf');
-const mongoose = require('mongoose');  // for database 
-require("dotenv").config();
-
+// import { createRequire } from "module"
+// const require = createRequire(import.meta.url);
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import {readdirSync} from 'fs';
+import cookieParser from 'cookie-parser';
+import csrf from 'csurf';
+import mongoose from 'mongoose'; // for database 
+import dotenv from 'dotenv';
+dotenv.config();
 // for environment variables
 //////////////////////////////////mongoose connect////////////////////////////////////
 // in mongoose.connect we need to paas database url in mongo atlas which we are extracting from env using dotenv module 
@@ -37,13 +36,7 @@ const csrfProtection= csrf({cookie:true});
 
  app.use(csrfProtection);
 // // defining routes
-// readdirSync('./routes').forEach(async (r) => {
-//     const route = await import(`./routes/${r}`)
-//     console.log(route);
-//     app.use('/api', route)
-//   })
-
-fs.readdirSync("./routes").map((r)=>{
+readdirSync("./routes").map((r)=>{
     app.use("/api" , require(`./routes/${r}`));
    
  })

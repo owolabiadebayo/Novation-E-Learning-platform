@@ -1,5 +1,5 @@
-import { createRequire } from 'node:module'
-const require = createRequire(import.meta.url);
+// import { createRequire } from 'node:module'
+// const require = createRequire(import.meta.url);
 
 const jwt = require('jsonwebtoken')
 import User from "../models/User";
