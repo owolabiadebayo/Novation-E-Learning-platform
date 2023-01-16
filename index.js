@@ -7,9 +7,9 @@ const morgan = require('morgan');
 const fs= require('fs');
 const cookieParser= require('cookie-parser');
 const csrf= require('csurf');
-import mongoose from 'mongoose'; // for database 
-import dotenv from 'dotenv';
-dotenv.config();
+const mongoose = require('mongoose');  // for database 
+require("dotenv").config();
+
 // for environment variables
 //////////////////////////////////mongoose connect////////////////////////////////////
 // in mongoose.connect we need to paas database url in mongo atlas which we are extracting from env using dotenv module 
