@@ -4,7 +4,8 @@
   "description": "Backend for edtech platform ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm index.js"
+    "start": "node -r esm index.js",
+    "dev": "nodemon -r esm index.js"
   },
   "author": "Stephen",
   "license": "ISC",
