@@ -1,9 +1,10 @@
 // import { createRequire } from "module"
 // const require = createRequire(import.meta.url);
-import express from 'express';
+// import express from 'express';
+const express = require('express')
 import cors from 'cors';
 import morgan from 'morgan';
-import {readdirSync} from 'fs';
+// import {readdirSync} from 'fs';
 const fs= require('fs');
 import cookieParser from 'cookie-parser';
 import csrf from 'csurf';
