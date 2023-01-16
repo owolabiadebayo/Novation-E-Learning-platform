@@ -5,7 +5,8 @@ import User from '../models/User'
 import Course from '../models/Course'
 // jwt token there or not middleware
 // i will send the jwt token in the request cookies and this middleware will identify whether jwt is compromised or not
-const expressJwt= require('express-jwt');
+// const expressJwt= require('express-jwt');
+import expressJwt from 'express-jwt';
 import dotenv from 'dotenv';
 dotenv.config(); 
 

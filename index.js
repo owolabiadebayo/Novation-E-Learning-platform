@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import {readdirSync} from 'fs';
+const fs= require('fs');
 import cookieParser from 'cookie-parser';
 import csrf from 'csurf';
 import mongoose from 'mongoose'; // for database 
@@ -36,12 +37,22 @@ const csrfProtection= csrf({cookie:true});
 
  app.use(csrfProtection);
 // // defining routes
- readdirSync("./routes").map((r)=>{app.use("/api" , require(`./routes/${r}`));})
+// readdirSync('./routes').forEach(async (r) => {
+//     const route = await import(`./routes/${r}`)
+//     console.log(route);
+//     app.use('/api', route)
+//   })
+
+fs.readdirSync("./routes").map((r)=>{
+    app.use("/api" , require(`./routes/${r}`));
+   
+ })
+  
 
 app.get('/api/csrf-token', (req, res)=>{
     console.log(req.csrfToken());
-    return res.status(200).json({csrfToken: req.csrfToken() });
-  })
+    return res.status(200).json({csrfToken: req.csrfToken()});
+})
 
 const host = '0.0.0.0'
 app.listen(process.env.PORT || 8000 ,host , ()=>{
