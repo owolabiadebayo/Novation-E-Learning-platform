@@ -13,4 +13,5 @@ router.post('/get-account-status', jwtSigned , getAccountStatus);
 router.get('/current-instructor', jwtSigned, currentInstructor);
 // get all courses to display in the instructor dashboard 
 router.get('/instructor-courses',jwtSigned,  instructorCourses);
-module.exports = router;
+
+export default router

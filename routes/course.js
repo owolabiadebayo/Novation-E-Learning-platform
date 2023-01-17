@@ -37,5 +37,6 @@ router.get('/check-enrollment/:slug', jwtSigned, checkEnrollment )
 router.put('/free-enrollment/:id', jwtSigned, freeEnrollment);
 // get user courses 
 router.get('/user-courses', jwtSigned, userCourses);
-module.exports= router;
+
+export default router
 

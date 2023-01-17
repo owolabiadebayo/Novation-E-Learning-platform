@@ -9,6 +9,11 @@ import csrf from 'csurf';
 import mongoose from 'mongoose'; // for database 
 import dotenv from 'dotenv';
 dotenv.config();
+import auth from './routes/auth'
+import Completed from './routes/completed';
+import Course from './routes/course';
+import Discussion from './routes/discussion';
+import instructor from './routes/instructor'
 // for environment variables
 //////////////////////////////////mongoose connect////////////////////////////////////
 // in mongoose.connect we need to paas database url in mongo atlas which we are extracting from env using dotenv module 
@@ -36,10 +41,11 @@ const csrfProtection= csrf({cookie:true});
 
  app.use(csrfProtection);
 // // defining routes
-readdirSync("./routes").map((r)=>{
-    app.use("/api" , require(`./routes/${r}`));
-   
- })
+app.use('/api', auth)
+app.use('/api', Completed)
+app.use('/api',Course)
+app.use('/api', Discussion)
+app.use('/api',instructor)
   
 
 app.get('/api/csrf-token', (req, res)=>{

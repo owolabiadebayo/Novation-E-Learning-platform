@@ -8,5 +8,6 @@ import { Route53RecoveryCluster } from 'aws-sdk';
 router.post('/markascomplete', jwtSigned, markComplete);
 router.post('/markasincomplete', jwtSigned, markIncomplete);
 router.get('/completed/:course',jwtSigned, completedCourses );
-module.exports= router;
+
+export default router
 
