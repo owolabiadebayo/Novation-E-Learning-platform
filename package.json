@@ -1,14 +1,18 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "Backend for edtech platform ",
   "main": "index.js",
   "scripts": {
-    "start": "node -r esm index.js",
+    "start": "node index.js",
     "dev": "nodemon -r esm index.js"
   },
   "author": "Stephen",
   "license": "ISC",
+  "engines": {
+    "node": "15.0.0"
+  },
   "dependencies": {
     "aws-sdk": "^2.1111.0",
     "axios": "^0.27.2",

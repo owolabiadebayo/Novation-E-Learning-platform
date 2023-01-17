@@ -23,6 +23,5 @@ router.get('/send-test-email',sendTestEmail );
 router.get('/get-userdata', jwtSigned, getUser);
 // update user details
 router.post('/update-user', jwtSigned, updateUser);
-
 module.exports= router;
 

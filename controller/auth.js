@@ -1,6 +1,3 @@
-// import { createRequire } from 'node:module'
-// const require = createRequire(import.meta.url);
-
 const jwt = require('jsonwebtoken')
 import User from "../models/User";
 import AWS from 'aws-sdk'
