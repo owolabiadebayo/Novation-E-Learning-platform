@@ -1,7 +1,7 @@
 // import { createRequire } from 'node:module'
 // const require = createRequire(import.meta.url);
 
-import AWS from 'aws-sdk'
+import AWS from '@aws-sdk/client-s3'
 import {nanoid} from 'nanoid'
 import Course from '../models/Course.js'
 import User from '../models/User.js';
