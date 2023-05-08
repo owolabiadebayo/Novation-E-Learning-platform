@@ -1,11 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "type": "module",
   "description": "Backend for edtech platform ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r esm index.js",
-    "dev": "nodemon -r esm index.js"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
   "author": "Stephen",
   "license": "ISC",
@@ -17,7 +18,6 @@
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
     "dotenv": "^16.0.0",
-    "esm": "^3.2.25",
     "express": "^4.17.3",
     "express-formidable": "^1.2.0",
     "express-jwt": "^6.1.1",

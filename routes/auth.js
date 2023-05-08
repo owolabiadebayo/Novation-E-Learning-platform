@@ -2,8 +2,8 @@
 // const require = createRequire(import.meta.url);
 import express from 'express';
 const router = express.Router();
-import {register, login, logout ,currentUser, sendTestEmail, generateOtp, verifyOtp, changePassword, getUser, updateUser} from '../controller/auth'
-import {jwtSigned} from '../middlewares/index'
+import {register, login, logout ,currentUser, sendTestEmail, generateOtp, verifyOtp, changePassword, getUser, updateUser} from '../controller/auth.js'
+import {jwtSigned} from '../middlewares/index.js'
 
 
 // controller 

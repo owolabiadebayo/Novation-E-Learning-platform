@@ -2,9 +2,11 @@
 // const require = createRequire(import.meta.url);
 
 // all instructor related routes
-import { jwtSigned } from '../middlewares/index'
-import { makeInstructor, getAccountStatus, currentInstructor, instructorCourses } from '../controller/instructor';
-const router = require("express").Router();
+import express from "express";
+const router = express.Router();
+import { jwtSigned } from '../middlewares/index.js'
+import { makeInstructor, getAccountStatus, currentInstructor, instructorCourses } from '../controller/instructor.js';
+
 // making instructor for stripe callback
 router.post('/makeinstructor',jwtSigned, makeInstructor);
 // make instructor on response success and charges enabled

@@ -1,11 +1,12 @@
 // import { createRequire } from 'node:module'
 // const require = createRequire(import.meta.url);
 
-import User from '../models/User'
-import Course from '../models/Course'
+import User from '../models/User.js'
+import Course from '../models/Course.js'
 import queryString from 'query-string'
+import Stripe from 'stripe';
+const stripe = new Stripe(process.env.STRIPE_SECRET);
 
-const stripe= require('stripe')(process.env.STRIPE_SECRET);
 
 //stripe onboarding 
 // will provide the link where we need to redirect

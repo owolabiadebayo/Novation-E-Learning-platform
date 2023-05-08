@@ -1,8 +1,8 @@
 // import { createRequire } from 'node:module'
 // const require = createRequire(import.meta.url);
 
-import Discussion from "../models/Discussion"
-import User from "../models/User"
+import Discussion from "../models/Discussion.js"
+// import User from "../models/User"
 
 export const getLessonDiscussion= async (req, res)=>{
     try{

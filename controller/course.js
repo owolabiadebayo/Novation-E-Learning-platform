@@ -4,11 +4,12 @@
 import AWS from 'aws-sdk'
 import {nanoid} from 'nanoid'
 import { isGeneratorFunction } from 'util/types';
-import Course from '../models/Course'
-import User from '../models/User';
-import Lesson from '../models/Lesson';
+import Course from '../models/Course.js'
+import User from '../models/User.js';
+import Lesson from '../models/Lesson.js';
 import {readFileSync} from 'fs'
-const slugify= require('slugify');
+import slugify from 'slugify';
+
 const awsconfig= {
     accessKeyId: process.env.AWS_ACCESS_KEY_IDS,
     secretAccessKey:process.env.AWS_SECRET_ACCESS_KEYS,

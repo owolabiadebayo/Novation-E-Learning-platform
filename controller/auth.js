@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken')
-import User from "../models/User";
+import jwt from 'jsonwebtoken'
+import User from "../models/User.js";
 import AWS from 'aws-sdk'
 import {nanoid} from 'nanoid'
-const bcrypt = require("bcrypt")
+import bcrypt from 'bcrypt'
 
 //AWS EMAILING
 

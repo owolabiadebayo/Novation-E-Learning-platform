@@ -1,6 +1,6 @@
 // import { createRequire } from 'node:module'
 // const require = createRequire(import.meta.url);
-import Completed from "../models/Completed"
+import Completed from "../models/Completed.js"
 
 export const markComplete= async (req, res)=>{
     try{

@@ -9,11 +9,11 @@ import csrf from 'csurf';
 import mongoose from 'mongoose'; // for database 
 import dotenv from 'dotenv';
 dotenv.config();
-import auth from './routes/auth'
-import Completed from './routes/completed';
-import Course from './routes/course';
-import Discussion from './routes/discussion';
-import instructor from './routes/instructor'
+import auth from './routes/auth.js'
+import Completed from './routes/completed.js';
+import Course from './routes/course.js';
+import Discussion from './routes/discussion.js';
+import instructor from './routes/instructor.js'
 // for environment variables
 //////////////////////////////////mongoose connect////////////////////////////////////
 // in mongoose.connect we need to paas database url in mongo atlas which we are extracting from env using dotenv module 

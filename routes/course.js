@@ -1,9 +1,8 @@
-
-
+import express from "express";
 import formidable from "express-formidable"
-const router= require('express').Router();
-import {imageUpload, createCourse, removeImage, getCourse, videoUpload, videoDelete, addLesson, updateCourse, updateCourseLessons, deleteLesson, updateLesson, publishCourse, unpublishCourse, getpublishedCourses, checkEnrollment, freeEnrollment, userCourses} from '../controller/course'
-import { jwtSigned , isEnrolled} from '../middlewares/index'
+const router = express.Router();
+import {imageUpload, createCourse, removeImage, getCourse, videoUpload, videoDelete, addLesson, updateCourse, updateCourseLessons, deleteLesson, updateLesson, publishCourse, unpublishCourse, getpublishedCourses, checkEnrollment, freeEnrollment, userCourses} from '../controller/course.js'
+import { jwtSigned , isEnrolled} from '../middlewares/index.js'
 router.get('/courses', getpublishedCourses);
 // course image S3 upload and delete functions
 router.post('/image-upload', jwtSigned, imageUpload);
