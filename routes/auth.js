@@ -2,7 +2,7 @@
 // const require = createRequire(import.meta.url);
 import express from 'express';
 const router = express.Router();
-import {register, login, logout ,currentUser, sendTestEmail, generateOtp, verifyOtp, changePassword, getUser, updateUser} from '../controller/auth.js'
+import {register, login, logout ,currentUser, generateOtp, verifyOtp, changePassword, getUser, updateUser} from '../controller/auth.js'
 import {jwtSigned} from '../middlewares/index.js'
 
 
@@ -18,7 +18,7 @@ router.post('/change-password', changePassword);
 router.get('/logout', logout);
 //whenever you want to access a protected route you need to verify JWT token then you can get the user
 router.get('/current-user',jwtSigned , currentUser);
-router.get('/send-test-email',sendTestEmail );
+// router.get('/send-test-email',sendTestEmail );
 // update context 
 router.get('/get-userdata', jwtSigned, getUser);
 // update user details
