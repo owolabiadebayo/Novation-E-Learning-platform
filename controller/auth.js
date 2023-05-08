@@ -1,64 +1,64 @@
 import jwt from 'jsonwebtoken'
 import User from "../models/User.js";
-import AWS from 'aws-sdk'
+// import AWS from 'aws-sdk'
 import {nanoid} from 'nanoid'
 import bcrypt from 'bcrypt'
 
-//AWS EMAILING
+// //AWS EMAILING
 
-const awsconfig= {
-    accessKeyId: process.env.AWS_ACCESS_KEY_IDS,
-    secretAccessKey:process.env.AWS_SECRET_ACCESS_KEYS,
-    region:process.env.AWS_REGIONS,
-    apiVersion:process.env.AWS_API_VERSIONS,
-};
-const SES =  new AWS.SES(awsconfig);
+// const awsconfig= {
+//     accessKeyId: process.env.AWS_ACCESS_KEY_IDS,
+//     secretAccessKey:process.env.AWS_SECRET_ACCESS_KEYS,
+//     region:process.env.AWS_REGIONS,
+//     apiVersion:process.env.AWS_API_VERSIONS,
+// };
+// const SES =  new AWS.SES(awsconfig);
 
 
-export const sendTestEmail =async (req, res)=>{
+// export const sendTestEmail =async (req, res)=>{
     
-    const params = {
-        Source: process.env.EMAIL_FROM,
-        Destination:
-        {
-            ToAddresses: ['owolabiadebayo78@gmail.com'],
-        },
-        ReplyToAddresses: [process.env.EMAIL_FROM],
-        Message:{
-            Body:{
-                Html:{
-                    Charset: "UTF-8",
-                    Data:  `
-                            <html>
-                            <h1>RESET PASSWORD FOR YOUR ACCOUNT</h1>
-                            <p>
-                            Click on the below link to reset your email:
-                            For any queries or complaints contact our support on 08160197959
+//     const params = {
+//         Source: process.env.EMAIL_FROM,
+//         Destination:
+//         {
+//             ToAddresses: ['owolabiadebayo78@gmail.com'],
+//         },
+//         ReplyToAddresses: [process.env.EMAIL_FROM],
+//         Message:{
+//             Body:{
+//                 Html:{
+//                     Charset: "UTF-8",
+//                     Data:  `
+//                             <html>
+//                             <h1>RESET PASSWORD FOR YOUR ACCOUNT</h1>
+//                             <p>
+//                             Click on the below link to reset your email:
+//                             For any queries or complaints contact our support on 08160197959
 
-                            </p>
-                            </html>
+//                             </p>
+//                             </html>
 
-                    `
-                }
-            },
-            Subject:{
-                Charset:"UTF-8",
-                Data: "Reset Password for your GMTsoftware Account"
+//                     `
+//                 }
+//             },
+//             Subject:{
+//                 Charset:"UTF-8",
+//                 Data: "Reset Password for your GMTsoftware Account"
 
-            }
-        }
+//             }
+//         }
 
-    };
-    const sendemail=  SES.sendEmail(params).promise();
-    sendemail.then((data)=>{
-        console.log(data);
-        res.status(200).json({ok:true});
-    }).catch((err)=> {
-        console.log(err);
-        res.status(500).json("Sending email unsuccessful");
-    });
+//     };
+//     const sendemail=  SES.sendEmail(params).promise();
+//     sendemail.then((data)=>{
+//         console.log(data);
+//         res.status(200).json({ok:true});
+//     }).catch((err)=> {
+//         console.log(err);
+//         res.status(500).json("Sending email unsuccessful");
+//     });
 
-};
+// };
 
 
 /////////////////////////////////////////////////
